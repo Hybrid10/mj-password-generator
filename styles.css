@@ -1,0 +1,320 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #16111a;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.container {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card {
+  width: 300px;
+  padding: 20px;
+  background-color: #2d2039;
+  color: white;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  display: block;
+  width: 100px;
+  margin: 0 auto;
+}
+
+h3 {
+  font-size: 24px;
+  text-align: center;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.rgb-animation {
+  text-align: center;
+  color: white;
+  margin-bottom: 20px;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.letter-animation {
+  animation: rgbAnimation 10s infinite;
+}
+
+@keyframes rgbAnimation {
+  0% {
+    color: white;
+  }
+
+  10% {
+    color: rgb(255, 0, 0);
+  }
+
+  20% {
+    color: rgb(0, 255, 0);
+  }
+
+  30% {
+    color: rgb(0, 0, 255);
+  }
+
+  40% {
+    color: rgb(255, 255, 0);
+  }
+
+  50% {
+    color: rgb(255, 0, 255);
+  }
+
+  60% {
+    color: rgb(0, 255, 255);
+  }
+
+  70% {
+    color: rgb(128, 0, 128);
+  }
+
+  80% {
+    color: rgb(128, 128, 0);
+  }
+
+  90% {
+    color: rgb(0, 128, 128);
+  }
+
+  100% {
+    color: white;
+  }
+}
+
+.password-field {
+  display: flex;
+  width: 100%;
+  background-color: #2d2039;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.password-field input {
+  padding: 10px;
+  width: 100%;
+  border: none;
+  background-color: #2d2039;
+  font-size: 16px;
+  color: white;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.password-field button {
+  background-color: transparent;
+  border-color: transparent;
+  margin: 5px;
+  margin-right: 10px;
+  transition: filter 0.3s ease;
+}
+
+.password-field button:hover {
+  filter: brightness(150%);
+}
+
+.password-field button:focus {
+  filter: invert();
+}
+
+.options {
+  margin-top: 10px;
+}
+
+.options-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.options label {
+  display: flex;
+  justify-content: start;
+  position: relative;
+  margin-bottom: 5px;
+}
+
+.options-label {
+  font-weight: bold;
+}
+
+.options .char-length-slider {
+  width: 85%;
+  height: 5px;
+  margin-bottom: 10px;
+}
+
+#char-length-value {
+  display: flex;
+  justify-content: end;
+  font-size: 28px;
+  font-weight: bold;
+  color: #a638f6;
+}
+
+.copy-icon {
+  width: 25px;
+  height: 25px;
+}
+
+.options input[type="checkbox"] {
+  margin-right: 5px;
+  accent-color: #a638f6;
+}
+
+.strength-meter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding: 8px;
+  background-color: #a638f6;
+}
+
+.strength-meter label {
+  color: white;
+  display: block;
+  /* margin-bottom: 5px; */
+  font-weight: bold;
+  text-align: center;
+}
+
+.strength-bar {
+  display: flex;
+  justify-content: end;
+  height: 25px;
+  width: 25%;
+  /* padding: 10px; */
+  background-color: transparent;
+  /* border: 1px solid; */
+  /* border-color: black; */
+  /* overflow: hidden; */
+}
+
+.strength-bar-fill-1 {
+  height: 100%;
+  width: 100%;
+  margin-right: 5px;
+  background-color: transparent;
+  border: 1px dotted;
+  border-color: white;
+}
+
+.strength-bar-fill-2 {
+  height: 100%;
+  width: 100%;
+  margin-right: 5px;
+  background-color: transparent;
+  border: 1px dotted;
+  border-color: white;
+}
+
+.strength-bar-fill-3 {
+  height: 100%;
+  width: 100%;
+  margin-right: 5px;
+  background-color: transparent;
+  border: 1px dotted;
+  border-color: white;
+}
+
+.strength-bar-fill-4 {
+  height: 100%;
+  width: 100%;
+  margin-right: 5px;
+  background-color: transparent;
+  border: 1px dotted;
+  border-color: white;
+}
+
+.generate-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: none;
+  /* border-radius: 4px; */
+  background-color: #a638f6;
+  color: #ffffff;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 16px;
+  font-weight: bolder;
+  cursor: pointer;
+  filter: grayscale(0);
+  transition: filter 0.3s ease;
+}
+
+.generate-button:active {
+  filter: grayscale(1);
+  animation: resetGrayscale 0.1s forwards;
+}
+
+@keyframes resetGrayscale {
+  to {
+    filter: brightness(50%);
+  }
+}
+
+.generate-button:hover {
+  filter: brightness(130%);
+}
+
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  margin-top: 20px;
+  background-color: #16111a;
+}
+
+.time-to-crack {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding: 8px;
+  background-color: #a638f6;
+}
+
+.time-to-crack label {
+  color: white;
+  display: block;
+  font-weight: bold;
+  text-align: center;
+}
+
+.time-bar {
+  display: flex;
+  justify-content: end;
+  height: 25px;
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid;
+  border-color: white;
+  overflow: hidden;
+}
+
+.time-bar-fill {
+  height: 100%;
+  width: 0; /* Initial width is 0 */
+  background-color: white;
+  transition: width 0.5s ease; /* Smooth animation */
+}

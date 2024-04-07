@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap">
+  <title>Password Generator</title>
+</head>
+<body>
+  <div class="container">
+    <h3 class="rgb-animation">Password Generator</h3>
+    <div class="password-field">
+      <input type="text" id="password" readonly placeholder="P@sSw0rd...">
+      <button onclick="copyPassword()">
+        <img class="copy-icon" src="../images/copy-icon.svg" alt="Copy Icon">
+      </button>
+    </div>
+    <div class="card">
+      <div class="options">
+        <div class="options-row">
+          <label class="options-label" for="char-length">Character length:</label>
+          <p id="char-length-value">8</p>
+        </div>
+        <input class="char-length-slider" type="range" id="char-length" min="4" max="20">
+        <br>
+        <label class="checkbox-label">
+          <input type="checkbox" id="include-uppercase" checked>
+          Include uppercase letters
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" id="include-lowercase" checked>
+          Include lowercase letters
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" id="include-numbers" checked>
+          Include numbers
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" id="include-symbols" checked>
+          Include symbols
+        </label>
+      </div>
+      <div class="strength-meter">
+        <label>Strength:</label>
+        <div class="strength-bar">
+          <div class="strength-bar-fill-1" id="strength-bar-fill-1"></div>
+          <div class="strength-bar-fill-2" id="strength-bar-fill-2"></div>
+          <div class="strength-bar-fill-3" id="strength-bar-fill-3"></div>
+          <div class="strength-bar-fill-4" id="strength-bar-fill-4"></div>
+        </div>
+      </div>
+      <div class="time-to-crack">
+        <label>Time to Crack:</label>
+        <div class="time-text" id="time-text"></div>
+      </div>
+      
+      <button class="generate-button" onclick="generatePassword()">Generate</button>
+    </div>
+    <div class="logo-container">
+      <img src="../images/techover-logo.png" alt="Image Description" class="image">
+    </div>
+  </div>
+  <audio id="button-sound">
+    <source src="button-sound.mp3" type="audio/mpeg">
+    <source src="button-sound.ogg" type="audio/ogg">
+    <!-- Add additional source tags for different audio file formats if needed -->
+  </audio>
+  <script src="mellt.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
